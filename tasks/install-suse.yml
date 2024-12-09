@@ -15,3 +15,4 @@
     community.general.zypper:
       name: netdata
       state: present
+      notify: Restart Netdata

@@ -1,0 +1,6 @@
+---
+  - name: Restart Netdata
+    systemd:
+      name: netdata
+      state: restarted
+      enabled: yes
