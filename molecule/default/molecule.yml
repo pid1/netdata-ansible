@@ -11,15 +11,15 @@ platforms:
     image: quay.io/centos/centos:7
     pre_build_image: true
 
-  - name: Debian10
-    image: debian:10
-    pre_build_image: false
-    dockerfile: ../common/Dockerfile_debian10.j2
-
   - name: debian11
     image: debian:11
     pre_build_image: false
     dockerfile: ../common/Dockerfile_debian11.j2
+
+  - name: debian12
+    image: debian:12
+    pre_build_image: false
+    dockerfile: ../common/Dockerfile_debian12.j2
 
   - name: fedora35
     image: fedora:35
@@ -50,7 +50,6 @@ platforms:
     dockerfile: ../common/Dockerfile_ubuntu2204.j2
     entrypoint: "/usr/bin/bash"
     pre_build_image: false
-
 
 provisioner:
   name: ansible
