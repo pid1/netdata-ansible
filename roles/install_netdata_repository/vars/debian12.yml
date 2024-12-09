@@ -1,3 +1,5 @@
 ---
 
-repo_uri: "{{ 'https://packagecloud.io/netdata/netdata/packages/debian/bullseye/netdata-repo_1-1_all.deb/download.deb' if distro == 'stable' else 'https://packagecloud.io/netdata/netdata/packages/debian/bullseye/netdata-repo-edge_1-1_all.deb/download.deb' }}"
+netdata_apt_key_uri: 'https://repo.netdata.cloud/netdatabot.gpg.key'
+
+netdata_repo_uri: "{{ 'deb [by-hash=yes] https://repo.netdata.cloud/repos/stable/debian/ bookworm/' if install_netdata_repository_distro == 'stable' else 'deb [by-hash=yes] https://repo.netdata.cloud/repos/edge/debian/ bookworm/' }}"
