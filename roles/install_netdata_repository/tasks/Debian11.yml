@@ -2,9 +2,12 @@
 
 - name: Install Netdata repo key.
   ansible.builtin.apt_key:
-    url: https://packagecloud.io/netdata/netdata/gpgkey
+    url: "{{ netdata_apt_key_uri }}"
     state: present
 
-- name: Install netdata repo
-  ansible.builtin.apt:
-    deb: "{{ repo_uri }}"
+- name: Add Netdata repository
+  ansible.builtin.apt_repository:
+    repo: "{{ netdata_repo_uri }}"
+    state: present
+    filename: 'netdata'
+    update_cache: yes
