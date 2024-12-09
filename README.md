@@ -1,21 +1,13 @@
-# Example of basic Netdata agent management using Ansible
-## Prerequisites
-Tested with Ansible v. 2.12.1; should work with any Ansible version since 2.9
+# Netdata Ansible
 
-You have to edit the inventory file `hosts` and, perhaps, `ansible.cfg`.
-It is likely that you will also want to edit netdata agent configuration file(s).
-
-Requires jmespath installed on the host system
 ## Tested on
-`Centos 7, Rocky 8, Oracle Linux 8, Fedora 35`
 
-`Debian 10, Debian 11, Ubuntu 18, Ubuntu 20, Ubuntu22`
+- Debian 12
+- OpenSUSE 15.6
 
-## Playbook components, a short description
-> netdata-agent.yml:
+## Roles
 
-Installs Netdata Packagecloud repository whenever possible.
-Installs Netdata agent latest available version, trying to avoid installation from other repositories. By default, the 'edge' is used. You can change the default in group_vars/all or set it in the command line using external variable:
+
 
 `ansible-playbook -e "distro=stable" netdata-agent.yml`
 
