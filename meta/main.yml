@@ -1,6 +1,0 @@
----
-galaxy_info:
-  role_name: netdata
-  namespace: netdta
-  author: Jonathan Roemer
-  description: Install Netdata agent and configure checks

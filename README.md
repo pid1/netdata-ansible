@@ -7,8 +7,6 @@
 
 ## Roles
 
-
-
 `ansible-playbook -e "distro=stable" netdata-agent.yml`
 
 Or you can set in on per host basis, using inventory file or hosts_var/hostname.

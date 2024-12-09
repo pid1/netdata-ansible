@@ -1,19 +1,18 @@
 ---
+
 - name: Add repo and install package
-  hosts: all
-  become: true
-  tasks:
+  block:
 
 # Debian
     - name: Install Netdata repo key.
       ansible.builtin.apt_key:
-        url: 
+        url: "{{ netdata_repository_key_url }}"
         state: present
 
     - name: Add repository for Debian
       ansible.builtin.apt_repository:
-        name: "netdata"
-        repo: "{{ netdata_repository_url }}{{ netdata_release_version }}/debian"
+        filename: "netdata"
+        repo: "deb [by-hash=yes] {{ netdata_repository_url }}{{ netdata_release_version }}/debian bookworm/"
         state: present
         update_cache: true
 

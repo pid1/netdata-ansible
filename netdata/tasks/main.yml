@@ -1,12 +1,12 @@
 ---
 - name: Install the Netdata Linux agent on Debian
-  include_tasks: pkg-debian.yml
+  include_tasks: install-debian.yml
   when: ansible_facts.os_family == "Debian"
 
 - name: Install the Netdata Linux agent on OpenSUSE
-  include_tasks: pkg-opensuse.yml
+  include_tasks: install-opensuse.yml
   when: ansible_facts.os_family == "Suse"
 
 - name: Configure the Netdata Linux agent
-  include_tasks: config.yml
+  include_tasks: configure-linux.yml
   when: netdata_manage_config and ansible_facts.os_family != "Windows" and ansible_facts.os_family != "Darwin"
