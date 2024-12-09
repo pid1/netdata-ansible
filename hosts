@@ -1,3 +1,0 @@
-[all]
-
-debtest ansible_host=137.184.144.190 ansible_user=root
