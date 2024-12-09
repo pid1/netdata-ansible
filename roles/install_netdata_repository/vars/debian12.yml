@@ -1,5 +1,5 @@
 ---
 
-netdata_apt_key_uri: 'https://repo.netdata.cloud/netdatabot.gpg.key'
+netdata_apt_key_uri: 'https://repository.netdata.cloud/netdatabot.gpg.key'
 
-netdata_repo_uri: "{{ 'deb [by-hash=yes] https://repo.netdata.cloud/repos/stable/debian/ bookworm/' if install_netdata_repository_distro == 'stable' else 'deb [by-hash=yes] https://repo.netdata.cloud/repos/edge/debian/ bookworm/' }}"
+netdata_repo_uri: "{{ 'deb [by-hash=yes] https://repository.netdata.cloud/repos/stable/debian/ bookworm/' if install_netdata_repository_distro == 'stable' else 'deb [by-hash=yes] https://repository.netdata.cloud/repos/edge/debian/ bookworm/' }}"
