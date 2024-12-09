@@ -1,0 +1,5 @@
+---
+
+netdata_key_uri: 'https://repo.netdata.cloud/netdatabot.gpg.key'
+
+netdata_repo_uri: 'https://repo.netdata.cloud/repos/stable/opensuse/15.6/x86_64/'

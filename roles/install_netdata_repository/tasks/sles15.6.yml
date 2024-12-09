@@ -1,13 +1,13 @@
 ---
 
 - name: Install Netdata repo key.
-  ansible.builtin.apt_key:
-    url: "{{ netdata_key_uri }}"
+  ansible.builtin.rpm_key:
+    key: "{{ netdata_key_uri }}"
     state: present
 
 - name: Add Netdata repository
-  ansible.builtin.apt_repository:
+  ansible.builtin.zypper_repository:
+    name: 'netdata'
     repo: "{{ netdata_repo_uri }}"
     state: present
-    filename: 'netdata'
-    update_cache: yes
+    auto_import_keys: yes

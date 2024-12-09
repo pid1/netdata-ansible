@@ -2,7 +2,7 @@
 
 - name: Install Netdata repo key.
   ansible.builtin.apt_key:
-    url: "{{ netdata_apt_key_uri }}"
+    url: "{{ netdata_key_uri }}"
     state: present
 
 - name: Add Netdata repository
