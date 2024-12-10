@@ -7,6 +7,9 @@ netdata_release_version: "stable"
 # Define if we manage the Netdata configuration
 netdata_manage_config: true
 
+# Define Netdata config file path
+netdata_config_dir: "/etc/netdata"
+
 # By default, don't claim the node on Netdata Cloud
 netdata_claim_node: false
 
@@ -17,3 +20,14 @@ netdata_claim_token: ""
 # Define the Netdata repository URLs and associated key files
 netdata_repository_url: "https://repo.netdata.cloud/repos/"
 netdata_repository_key_url: "https://repo.netdata.cloud/netdatabot.gpg.key"
+
+
+
+# Define config for enbled Go integrations
+netdata_go_collector_plugins: {}
+  # - name: prometheus
+  #   config:
+  #     job:
+  #       - name: local
+  #         url: http://127.0.0.1:9090/metrics
+    

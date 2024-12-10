@@ -12,12 +12,12 @@
     - name: Add repository for Debian
       ansible.builtin.apt_repository:
         filename: "netdata"
-        repo: "deb [by-hash=yes] {{ netdata_repository_url }}{{ netdata_release_version }}/debian bookworm/"
+        repo: "deb [by-hash=yes] {{ netdata_repository_url }}{{ netdata_release_version }}/{{ ansible_distribution | lower }} {{ ansible_distribution_release }}/"
         state: present
         update_cache: true
 
     - name: Install package on Debian
       ansible.builtin.apt:
-        name: netdata
+        name: "netdata"
         state: present
       notify: Restart Netdata
