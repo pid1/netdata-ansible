@@ -1,7 +1,7 @@
 - name: Apply the netdata.conf.j2 template
   template:
     src: netdata.conf.j2
-    dest: /etc/netdata/netdata.conf
+    dest: "{{ netdata_config_dir }}/netdata.conf"
     owner: root
     group: root
     mode: '0644'
