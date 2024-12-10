@@ -6,3 +6,15 @@
     group: root
     mode: '0644'
   notify: Restart Netdata
+
+- name: Configure GO Collector Plugins
+  template:
+    src: go.d/plugin.conf.j2
+    dest: "{{ netdata_config_dir }}/go.d/{{ item.name }}.conf"
+    owner: root
+    group: root
+    mode: '0644'
+  loop: "{{ netdata_go_collector_plugins }}"
+  loop_control:
+    label: "{{ item.name }}"    
+  notify: Restart Netdata
