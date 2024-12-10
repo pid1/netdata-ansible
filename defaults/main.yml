@@ -24,7 +24,7 @@ netdata_repository_key_url: "https://repo.netdata.cloud/netdatabot.gpg.key"
 
 
 # Define config for enbled Go integrations
-netdata_go_collector_plugins: {}
+netdata_go_collector_plugins: []
   # - name: prometheus
   #   config:
   #     job:
