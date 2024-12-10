@@ -16,5 +16,7 @@
     mode: '0644'
   loop: "{{ netdata_go_collector_plugins }}"
   loop_control:
-    label: "{{ item.name }}"    
+    label: "{{ item.name | default(omit) }}"    
+  when:
+    - netdata_go_collector_plugins is defined and netdata_go_collector_plugins|length > 0
   notify: Restart Netdata
