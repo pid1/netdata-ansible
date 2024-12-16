@@ -1,0 +1,25 @@
+---
+
+- name: Get information about running agent
+  ansible.builtin.command: netdatacli aclk-state json
+  register: agent_info
+
+- name: Set fact for is_claimed
+  ansible.builtin.set_fact:
+    is_claimed: "{{ agent_info.stdout | from_json | json_query('\"agent-claimed\"') }}"
+
+- name: Claim the new node if is not claimed yet
+  block:
+    - name: Generate UUID
+      ansible.builtin.command: uuidgen
+      register: uuid
+
+    - name: Set fact new_uuid
+      ansible.builtin.set_fact:
+        new_uuid: "{{ uuid.stdout }}"
+
+    - name: Claim the node
+      ansible.builtin.command: netdata-claim.sh -token="{{ netdata_claim_token }}" -rooms="{{ netdata_claim_rooms }}" -url="{{ netdata_claim_url }}" -id="{{ new_uuid }}"
+      notify: restart netdata agent
+
+  when: not is_claimed
