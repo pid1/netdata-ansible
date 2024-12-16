@@ -10,12 +10,10 @@ netdata_manage_config: true
 # Define Netdata config file path
 netdata_config_dir: "/etc/netdata"
 
-# By default, don't claim the node on Netdata Cloud
-netdata_claim_node: false
-
 # Allow for injecting a claim token if using Netdata Cloud
 netdata_claim_url: "https://app.netdata.cloud"
 netdata_claim_token: ""
+netdata_claim_rooms: ""
 
 # Define the Netdata repository URLs and associated key files
 netdata_repository_url: "https://repo.netdata.cloud/repos/"

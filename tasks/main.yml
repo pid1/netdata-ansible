@@ -10,3 +10,7 @@
 - name: Configure the Netdata Linux agent
   include_tasks: configure-linux.yml
   when: netdata_manage_config and ansible_facts.os_family != "Windows" and ansible_facts.os_family != "Darwin"
+
+- name: Claim node if claim_token
+  include_tasks: node_claim.yml
+  when: netdata_claim_token | length > 0
